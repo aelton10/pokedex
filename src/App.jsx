@@ -4,8 +4,9 @@ import ButtonAppBar from "./components/ButtonAppBar";
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import PokemonCard from "./components/PokemonCard";
+import PokemonCard2 from "./components/PokemonCard2";
 import Pagination from '@mui/material/Pagination';
+
 
 
 
@@ -36,14 +37,14 @@ function App() {
           {pokemons.map((pokemon) => (
           <Grid item xs={6} lg={6}>
             <div key={pokemon.id}>
-              <PokemonCard image={pokemon.image_url} name= {pokemon.name} kind={pokemon.kind} id={pokemon.id}/>
+              <PokemonCard2 image={pokemon.image_url} name= {pokemon.name} kind={pokemon.kind} id={pokemon.id} height={pokemon.height} weight={pokemon.weight}/>
             </div>
             </Grid>
               ))}
           </Grid>
         </Box> 
-      <Pagination page={page} onClick={handleChange} size= "large"count={33} variant="outlined" color="primary" boundaryCount={2}/>
-      <h1>{page}</h1>
+      <Pagination page={page} onChange={handleChange} size= "large"count={33} variant="outlined" color="primary" boundaryCount={2}/>
+      
       </Container>
     </div>
   );
